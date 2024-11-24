@@ -35,7 +35,7 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `https://ecommerce-testing-frontend.vercel.app/activation/${activationToken}`;
+    const activationUrl = `https://ecommerce-testing-frontend-angi.vercel.app/activation/${activationToken}`;
 
     try {
       await sendMail({
@@ -108,7 +108,6 @@ router.post(
       const { email, password } = req.body;
       console.log(password);
       if (!email || !password) {
-
         return next(new ErrorHandler("Please provide the all fields!", 400));
       }
 

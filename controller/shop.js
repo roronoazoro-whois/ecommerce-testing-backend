@@ -39,7 +39,7 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
 
     const activationToken = createActivationToken(seller);
 
-    const activationUrl = `https://ecommerce-testing-frontend.vercel.app/seller/activation/${activationToken}`;
+    const activationUrl = `https://ecommerce-testing-frontend-angi.vercel.app/seller/activation/${activationToken}`;
 
     try {
       await sendMail({
