@@ -6,9 +6,15 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 app.use(cors({
-  origin: ['http://localhost:3000',],
+  origin: [
+    'http://localhost:3000',
+    'https://ecommerce-testing-frontend-angi.vercel.app',
+    'https://ecommerce-testing-frontend-angi-bxr3k3mux.vercel.app',
+    'https://ecommerce-testing-frontend-git-b62db3-banh-viet-hungs-projects.vercel.app'
+  ],
   credentials: true
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
