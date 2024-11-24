@@ -52,7 +52,7 @@ router.post("/create-user", async (req, res, next) => {
       return next(new ErrorHandler(error.message, 500));
     }
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("Error processing email:", error);
     return next(new ErrorHandler(error.message, 400));
   }
 });
