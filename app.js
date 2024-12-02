@@ -10,8 +10,8 @@ app.use(
     origin: [
       "http://localhost:3000", // Hoặc địa chỉ frontend của bạn
       "https://ecommerce-testing-frontend-angi.vercel.app",
-      "https://ecommerce-testing-frontend-ar73fm1bw-banh-viet-hungs-projects.vercel.app/",
-      "https://ecommerce-testing-frontend-git-main-banh-viet-hungs-projects.vercel.app/"
+      "https://ecommerce-testing-frontend-git-main-banh-viet-hungs-projects.vercel.app",
+      "https://ecommerce-testing-frontend-ar73fm1bw-banh-viet-hungs-projects.vercel.app"
     ],
     credentials: true,
   })
