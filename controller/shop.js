@@ -172,7 +172,7 @@ router.get(
         expires: new Date(Date.now()),
         httpOnly: true,
         sameSite: "none", // hoặc "Strict"
-        secure: false, // Đảm bảo chạy trên môi trường phát triển
+        secure: true, // Đảm bảo chạy trên môi trường phát triển
       });
       
       res.status(201).json({
