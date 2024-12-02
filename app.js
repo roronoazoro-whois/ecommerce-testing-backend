@@ -11,7 +11,7 @@ app.use(
       "http://localhost:3000", // Hoặc địa chỉ frontend của bạn
       "https://ecommerce-testing-frontend-angi.vercel.app",
       "https://ecommerce-testing-frontend-git-b62db3-banh-viet-hungs-projects.vercel.app",
-      "https://ecommerce-testing-frontend-angi-r2hzdt8q9.vercel.app",
+      "https://ecommerce-testing-frontend-angi-h7fn6xbjr.vercel.app",
     ],
     credentials: true,
   })
