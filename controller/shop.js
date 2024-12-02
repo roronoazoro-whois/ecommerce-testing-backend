@@ -171,9 +171,10 @@ router.get(
       res.cookie("seller_token", null, {
         expires: new Date(Date.now()),
         httpOnly: true,
-        sameSite: "none",
-        secure: true,
+        sameSite: "none", // hoặc "Strict"
+        secure: false, // Đảm bảo chạy trên môi trường phát triển
       });
+      
       res.status(201).json({
         success: true,
         message: "Log out successful!",
