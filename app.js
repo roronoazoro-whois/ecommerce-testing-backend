@@ -10,7 +10,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://ecommerce-testing-frontend-angi.vercel.app",
-      "https://ecommerce-testing-frontend-angi-bxr3k3mux.vercel.app",
+      "https://ecommerce-testing-frontend-angi-7py8nmx3b.vercel.app",
       "https://ecommerce-testing-frontend-git-b62db3-banh-viet-hungs-projects.vercel.app",
     ],
     credentials: true,
