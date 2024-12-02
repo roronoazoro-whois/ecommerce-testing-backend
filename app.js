@@ -5,16 +5,17 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://ecommerce-testing-frontend-angi.vercel.app',
-    'https://ecommerce-testing-frontend-angi-bxr3k3mux.vercel.app',
-    'https://ecommerce-testing-frontend-git-b62db3-banh-viet-hungs-projects.vercel.app'
-  ],
-  credentials: true
-}));
-
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://ecommerce-testing-frontend-angi.vercel.app",
+      "https://ecommerce-testing-frontend-angi-bxr3k3mux.vercel.app",
+      "https://ecommerce-testing-frontend-git-b62db3-banh-viet-hungs-projects.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
@@ -54,7 +55,7 @@ app.use("/api/v2/coupon", coupon);
 app.use("/api/v2/payment", payment);
 app.use("/api/v2/withdraw", withdraw);
 
-// kiểm soát lỗi 
+// kiểm soát lỗi
 app.use(ErrorHandler);
 
 module.exports = app;

@@ -100,9 +100,12 @@ router.put(
         return next(new ErrorHandler("Order not found with this id", 400));
       }
       if (req.body.status === "Transferred to delivery partner") {
-        order.cart.forEach(async (o) => {
+        // order.cart.forEach(async (o) => {
+        //   await updateOrder(o._id, o.qty);
+        // });
+        await Promise.all(order.cart.map(async (o) => {
           await updateOrder(o._id, o.qty);
-        });
+        }));
       }
 
       order.status = req.body.status;
@@ -121,19 +124,35 @@ router.put(
         order,
       });
 
+      // async function updateOrder(id, qty) {
+      //   const product = await Product.findById(id);
+
+      //   product.stock -= qty;
+      //   product.sold_out += qty;
+
+      //   await product.save({ validateBeforeSave: false });
+      // }
       async function updateOrder(id, qty) {
-        const product = await Product.findById(id);
-
-        product.stock -= qty;
-        product.sold_out += qty;
-
-        await product.save({ validateBeforeSave: false });
+        try {
+          const product = await Product.findById(id);
+          if (!product) {
+            console.error(`Product not found: ${id}`);
+            return;
+          }
+          product.stock -= qty;
+          product.sold_out += qty;
+          await product.save({ validateBeforeSave: false });
+          console.log(`Updated product: ${id}, stock: ${product.stock}, sold_out: ${product.sold_out}`);
+        } catch (error) {
+          console.error(`Error updating product: ${id}`, error);
+        }
       }
+      
 
       async function updateSellerInfo(amount) {
         const seller = await Shop.findById(req.seller.id);
         
-        seller.availableBalance = amount;
+        seller.availableBalance += amount;
 
         await seller.save();
       }
